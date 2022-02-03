@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
   get 'about' => 'about#show'
 
+  
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
