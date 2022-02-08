@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'User Validations' do
-    let (:user) {User.new(name: 'whats up', email: 'whats@up.com', password: '123', password_confirmation: '123')}
+    let (:user) {User.new(name: 'ghadeer', email: 'g@up.com', password: '123', password_confirmation: '123')}
     
     it "should be a valid user" do
       expect(user).to be_valid
     end
 
     it "should be invalid passwords not matching" do
-      user.password_confirmation = '23'
+      user.password_confirmation = '456'
       expect(user).to be_invalid
     end
 
@@ -81,4 +81,5 @@ RSpec.describe User, type: :model do
       expect(@new_login).to be_nil
     end    
   end
+
 end
